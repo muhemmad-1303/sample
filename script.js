@@ -1,5 +1,5 @@
 document.addEventListener('cookieyes_consent_update',function(eventData){
-    if(eventData.details.hasOwnPropert('accepted')){
+    if('accept' in eventData.details ){
         console.log("i am accepted");
     }
     
