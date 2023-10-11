@@ -1,6 +1,3 @@
-
-
 document.addEventListener('cookieyes_consent_update',function(eventData){
-    console.log(eventData);
-
+    console.log(eventData.details);
 })
