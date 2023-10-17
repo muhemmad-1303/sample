@@ -3,7 +3,7 @@ var checktimeout = 0;
 window.addEventListener("load", function () {
   waitForElement(".cky-consent-container", function () {
     var queryString = location.search.substring(1);
-        var renewStatus= queryString.split("=")[1];
+        var renewConsent= queryString.split("=")[1];
        if(renewConsent==="true"){
             revisitCkyConsent();
        }
