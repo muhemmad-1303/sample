@@ -1,6 +1,6 @@
 var checktimeout = 0;
 window.addEventListener("load", function () {
-  waitForElement(".cky-consent-container", function () {
+  waitForElement("cky-consent-bar", function () {
     console.log("hello");
     fetch("https://directory.cookieyes.com/api/v1/ip")
       .then((response) => response.json())
