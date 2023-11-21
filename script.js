@@ -1,7 +1,8 @@
 var checktimeout = 0;
 window.addEventListener("load", function () {
   waitForElement(".cky-consent-container", function () {
-    const rejectButtons = document.getElementsByClassName(
+    const rejectButtonsOuterLayer=document.getElementByClassName("cky-notice-btn-wrapper")
+    const rejectButtons = rejectButtonsOuterLayer.document.getElementsByClassName(
       "cky-btn cky-btn-reject"
     );
 
