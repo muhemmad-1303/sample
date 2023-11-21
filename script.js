@@ -3,8 +3,8 @@ window.addEventListener("load", function () {
   waitForElement(".cky-consent-container", function () {
     var rejectButtons = document.querySelector(".cky-notice-btn-wrapper .cky-btn.cky-btn-reject");
     var newButton=rejectButtons.cloneNode(true)
-    rejectButtons.replaceWith(newButton);
-    rejectButtons.onclick = function () {
+    newButton.replaceWith(newButton);
+    newButton.onclick = function () {
       console.log("hello");
       revisitCkyConsent();
     };
