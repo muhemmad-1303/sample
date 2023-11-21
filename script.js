@@ -2,9 +2,9 @@ var checktimeout = 0;
 window.addEventListener("load", function () {
   waitForElement(".cky-consent-container", function () {
     var rejectButtons = document.querySelector(".cky-notice-btn-wrapper .cky-btn.cky-btn-reject");
-    var newButton=rejectButtons.cloneNode(true)
-    newButton.replaceWith(newButton);
-    newButton.onclick = function () {
+    var newButton=newButton.cloneNode(true)
+    rejectButtons.replaceWith(newButton);
+    rejectButtons.onclick = function () {
       console.log("hello");
       revisitCkyConsent();
     };
