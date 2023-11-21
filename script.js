@@ -1,15 +1,21 @@
 var checktimeout = 0;
 window.addEventListener("load", function () {
   waitForElement(".cky-consent-container", function () {
+    const rejectButtons = document.getElementsByClassName(
+      "cky-btn cky-btn-reject"
+    );
 
-    var rejectButtons = document.querySelector(".cky-notice-btn-wrapper .cky-btn.cky-btn-reject");
-    rejectButtons.replaceWith(rejectButtons.cloneNode(true));
-    console.log("fvfv s shello");
-    rejectButtons.onclick = function () {
-      console.log("hello");
-      revisitCkyConsent();
-    };
-   
+    for (const button of rejectButtons) {
+      button.replaceWith(button.cloneNode(true));
+    }
+    const count=0;
+    for (const button of rejectButtons) {
+      if(count===0){
+      button.onclick = function () {
+        revisitCkyConsent()
+      };
+    }
+    }
   });
 });
 function waitForElement(selector, callback) {
@@ -22,3 +28,6 @@ function waitForElement(selector, callback) {
     }, 500);
   }
 }
+   
+ 
+
