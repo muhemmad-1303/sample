@@ -4,7 +4,7 @@ window.addEventListener("load", function () {
     var rejectButtons = document.querySelector(".cky-notice-btn-wrapper .cky-btn.cky-btn-reject");
     var newButton=rejectButtons.cloneNode(true)
     rejectButtons.replaceWith(newButton);
-    rejectButtons.onclick = function () {
+    newButton.onclick = function () {
       console.log("hello");
       revisitCkyConsent();
     };
