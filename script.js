@@ -1,18 +1,15 @@
 var checktimeout = 0;
 window.addEventListener("load", function () {
   waitForElement(".cky-consent-container", function () {
-    var rejectButtonsOuterLayer=document.querySelector("cky-notice-btn-wrapper");
-    var rejectButtons = rejectButtonsOuterLayer.querySelector(
-      ".cky-btn-rejet"
-    );
 
+    const rejectButtons = document.querySelector(".cky-notice-btn-wrapper .cky-btn.cky-btn-reject");
     for (const button of rejectButtons) {
       button.replaceWith(button.cloneNode(true));
     }
     for (const button of rejectButtons) {
       button.onclick = function () {
-        console.log("hello")
-        revisitCkyConsent()
+        console.log("hello");
+        revisitCkyConsent();
       };
     }
   });
@@ -27,6 +24,3 @@ function waitForElement(selector, callback) {
     }, 500);
   }
 }
-   
- 
-
