@@ -4,10 +4,13 @@ window.addEventListener("load", function () {
     var rejectButtons = document.querySelector(".cky-notice-btn-wrapper .cky-btn.cky-btn-reject");
     var newButton=rejectButtons.cloneNode(true)
     rejectButtons.replaceWith(newButton);
+    if(rejectButtons){
     newButton.onclick = function () {
-      console.log("hello");
+      const outerLayer=document.querySelector(".cky-consent-container");
+      outerLayer.classList.add('cky-hide')
       revisitCkyConsent();
     };
+  }
   });
 });
 function waitForElement(selector, callback) {
