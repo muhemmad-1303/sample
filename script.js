@@ -1,22 +1,22 @@
 var checktimeout = 0;
 window.addEventListener("load", function () {
   waitForElement(".cky-consent-container", function () {
-    const rejectButtons = document.querySelectorAll(".cky-btn-reject");
+    const rejectButtons = document.getElementsByClassName(
+      "cky-btn cky-btn-reject"
+    );
+
     for (const button of rejectButtons) {
       button.replaceWith(button.cloneNode(true));
     }
-    // var newButton=rejectButtons.cloneNode(true)
-    // rejectButtons.replaceWith(newButton);
     for (const button of rejectButtons) {
-     button.onclick = function () {
-      document.querySelectorAll(".cky-legitimate-switch-wrapper input").forEach((btn)=>{
+      button.onclick = function () {
         console.log("hello");
-            btn.checked=true;
-      })
-      performBannerAction("accept_partial");
-    };
-  }
-    
+        document.querySelectorAll(".cky-legitimate-switch-wrapper").forEach((btn)=>{
+          btn.checked=true;
+        })
+        performBannerAction("accept_partial");
+      };
+    }
   });
 });
 function waitForElement(selector, callback) {
@@ -30,3 +30,5 @@ function waitForElement(selector, callback) {
   }
 }
 // ckyIABVendorSection1Item8ToggleLegitimate
+
+
