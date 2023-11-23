@@ -5,9 +5,8 @@ window.addEventListener("load", function () {
     var newButton=rejectButtons.cloneNode(true)
     rejectButtons.replaceWith(newButton);
     newButton.onclick = function () {
-      document.querySelectorAll(".cky-legitimate-switch-wrapper input").forEach((btn)=>{
+      document.querySelectorAll(".cky-legitimate-switch-wrapper").forEach((btn)=>{
         btn.checked=true;
-        
       })
       performBannerAction("accept_partial");
     };
