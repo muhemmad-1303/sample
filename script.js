@@ -12,8 +12,9 @@ window.addEventListener("load", function () {
       button.onclick = function () {
         console.log("hello");
         document.querySelectorAll(".cky-legitimate-switch-wrapper input").forEach((btn)=>{
-          console.log("hello")
+          if(btn.checked===true){
           btn.checked=true;
+          }
         })
         performBannerAction("accept_partial");
       };
