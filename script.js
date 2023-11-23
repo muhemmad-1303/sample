@@ -1,7 +1,7 @@
 var checktimeout = 0;
 window.addEventListener("load", function () {
   waitForElement(".cky-consent-container", function () {
-    var rejectButtons = document.querySelector(".cky-btn cky-btn-reject");
+    const rejectButtons = document.querySelectorAll(".cky-btn cky-btn-reject");
     for (const button of rejectButtons) {
       button.replaceWith(button.cloneNode(true));
     }
