@@ -10,9 +10,7 @@ window.addEventListener("load", function () {
     for (const button of rejectButtons) {
      button.onclick = function () {
       document.querySelectorAll(".cky-legitimate-switch-wrapper").forEach((btn)=>{
-         if(btn.checked===true){
             btn.checked=true;
-         }
       })
       performBannerAction("accept_partial");
     };
