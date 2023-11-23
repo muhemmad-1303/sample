@@ -1,12 +1,14 @@
 var checktimeout = 0;
 window.addEventListener("load", function () {
   waitForElement(".cky-consent-container", function () {
-    var rejectButtons = document.querySelector(".cky-notice-btn-wrapper .cky-btn.cky-btn-reject");
+    var rejectButtons = document.querySelector(".cky-btn cky-btn-reject");
     var newButton=rejectButtons.cloneNode(true)
     rejectButtons.replaceWith(newButton);
     newButton.onclick = function () {
       document.querySelectorAll(".cky-legitimate-switch-wrapper").forEach((btn)=>{
-        btn.checked=true;
+         if(btn.checked===true){
+            btn.checked=true;
+         }
       })
       performBannerAction("accept_partial");
     };
