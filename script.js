@@ -6,11 +6,11 @@ window.addEventListener("load", function () {
     rejectButtons.replaceWith(newButton);
     newButton.onclick = function () {
       document.querySelectorAll(".cky-legitimate-switch-wrapper input").forEach((btn)=>{
-        btn.checked=false;
-        console.log("hello");
+        btn.checked=true;
+        
       })
     };
-  
+    performBannerAction("accept_partial");
   });
 });
 function waitForElement(selector, callback) {
