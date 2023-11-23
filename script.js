@@ -9,8 +9,9 @@ window.addEventListener("load", function () {
         btn.checked=true;
         
       })
+      performBannerAction("accept_partial");
     };
-    performBannerAction("accept_partial");
+    
   });
 });
 function waitForElement(selector, callback) {
