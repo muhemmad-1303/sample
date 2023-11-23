@@ -2,9 +2,13 @@ var checktimeout = 0;
 window.addEventListener("load", function () {
   waitForElement(".cky-consent-container", function () {
     var rejectButtons = document.querySelector(".cky-btn cky-btn-reject");
-    var newButton=rejectButtons.cloneNode(true)
-    rejectButtons.replaceWith(newButton);
-    newButton.onclick = function () {
+    for (const button of rejectButtons) {
+      button.replaceWith(button.cloneNode(true));
+    }
+    // var newButton=rejectButtons.cloneNode(true)
+    // rejectButtons.replaceWith(newButton);
+    for (const button of rejectButtons) {
+     button.onclick = function () {
       document.querySelectorAll(".cky-legitimate-switch-wrapper").forEach((btn)=>{
          if(btn.checked===true){
             btn.checked=true;
@@ -12,6 +16,7 @@ window.addEventListener("load", function () {
       })
       performBannerAction("accept_partial");
     };
+  }
     
   });
 });
