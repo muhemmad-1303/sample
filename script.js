@@ -11,7 +11,8 @@ window.addEventListener("load", function () {
     for (const button of rejectButtons) {
       button.onclick = function () {
         console.log("hello");
-        document.querySelectorAll(".cky-legitimate-switch-wrapper").forEach((btn)=>{
+        document.querySelectorAll(".cky-legitimate-switch-wrapper input").forEach((btn)=>{
+          console.log("hello")
           btn.checked=true;
         })
         performBannerAction("accept_partial");
