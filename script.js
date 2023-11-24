@@ -10,11 +10,16 @@ window.addEventListener("load", function () {
     }
     for (const button of rejectButtons) {
       button.onclick = function () {
-        console.log("hello");
         document.querySelectorAll(".cky-legitimate-switch-wrapper input").forEach((btn)=>{
           if(btn.checked===true){
           btn.checked=true;
           }
+          // document.querySelectorAll(".cky-switch input").forEach((btn)=>{btn.checked=false})
+          document.querySelectorAll(".cky-consent-switch-wrapper input").forEach((btn)=>{btn.checked=true})
+
+
+
+
         })
         performBannerAction("accept_partial");
       };
