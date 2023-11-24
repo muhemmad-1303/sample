@@ -4,25 +4,29 @@ window.addEventListener("load", function () {
     const rejectButtons = document.getElementsByClassName(
       "cky-btn cky-btn-reject"
     );
-
-    for (const button of rejectButtons) {
-      button.replaceWith(button.cloneNode(true));
-    }
-    for (const button of rejectButtons) {
-      button.onclick = function () {
-        document.querySelectorAll(".cky-legitimate-switch-wrapper input").forEach((btn)=>{
-          if(btn.checked===true){
-          btn.checked=true;
-          }
-          // document.querySelectorAll(".cky-switch input").forEach((btn)=>{btn.checked=false})
-          document.querySelectorAll(".cky-consent-switch-wrapper input").forEach((btn)=>{btn.checked=true})
-
-
-
-
-        })
-        performBannerAction("accept_partial");
-      };
+    if (rejectButtons) {
+      for (const button of rejectButtons) {
+        button.replaceWith(button.cloneNode(true));
+      }
+      for (const button of rejectButtons) {
+        button.onclick = function () {
+          document
+            .querySelectorAll(".cky-legitimate-switch-wrapper input")
+            .forEach((btn) => {
+              if (btn.checked === true) {
+                btn.checked = true;
+              }
+              document
+                .querySelectorAll(".cky-consent-switch-wrapper input")
+                .forEach((btn) => {
+                  if (btn.checked === true) {
+                    btn.checked = false;
+                  }
+                });
+            });
+          performBannerAction("accept_partial");
+        };
+      }
     }
   });
 });
@@ -36,6 +40,4 @@ function waitForElement(selector, callback) {
     }, 500);
   }
 }
-// ckyIABVendorSection1Item8ToggleLegitimate
-
 
