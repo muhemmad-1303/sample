@@ -16,6 +16,11 @@ window.addEventListener("load", function () {
               if (btn.checked === true) {
                 btn.checked = true;
               }
+              document.querySelectorAll(".cky-switch input").forEach((btn)=>{
+                     if(btn.checked === true){
+                         btn.checked=false;
+                     }
+                })
               document
                 .querySelectorAll(".cky-consent-switch-wrapper input")
                 .forEach((btn) => {
