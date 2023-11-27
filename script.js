@@ -4,7 +4,7 @@ window.addEventListener("load", function () {
     var queryString = location.search.substring(1);
     var  action= queryString.split("=")[1];
     if (action==="optout") {
-      document.getElementById("ckyCCPAOptOut").checked = true;
+      document.getElementById(".cky-opt-out-checkbox-wrapper input").checked = true;
       performBannerAction();
     }
   });
