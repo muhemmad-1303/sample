@@ -4,7 +4,9 @@ window.addEventListener("load", function () {
     var queryString = location.search.substring(1);
     var  action= queryString.split("=")[1];
     if (action==="optout") {
-      document.querySelector(".cky-opt-out-checkbox-wrapper input").checked = true;
+      const ccpaOptout=document.getElementById("ckyCCPAOptOut");
+      ccpaOptout.checked=true;
+      ccpaOptout.style.backgroundColor='#1863dc';
       performBannerAction();
     }
   });
