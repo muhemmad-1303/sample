@@ -1,9 +1,9 @@
 var checktimeout = 0;
 window.addEventListener("load", function () {
   waitForElement(".cky-consent-container", function () {
-    var queryString = location.search.substring(1);
-    var  action= queryString.split("=")[1];
-    if (action==="optout") {
+    var queryString = location.search.substring(1).split('&');
+  
+    if (queryString.includes('action=optout')) {
       const ccpaOptout=document.getElementById("ckyCCPAOptOut");
       ccpaOptout.checked=true;
       ccpaOptout.style.backgroundColor='#1863dc';
