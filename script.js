@@ -1,25 +1,25 @@
-var checktimeout = 0;
-window.addEventListener("load", function () {
-  waitForElement(".cky-consent-container", function () {
-    const queryString = location.search.substring(1).split('&');
-    if (queryString.includes('optoutAction=optout')) {
-      const ccpaOptout=document.getElementById("ckyCCPAOptOut");
-      ccpaOptout.checked=true;
-      ccpaOptout.style.backgroundColor='#1863dc';
-      performBannerAction();
-    }
-  });
-});
-function waitForElement(selector, callback) {
-  const element = document.querySelector(selector);
-  if (element) return callback();
-  checktimeout++;
-  if (checktimeout < 120) {
-    setTimeout(function () {
-      waitForElement(selector, callback);
-    }, 500);
-  }
-}
+// var checktimeout = 0;
+// window.addEventListener("load", function () {
+//   waitForElement(".cky-consent-container", function () {
+//     const queryString = location.search.substring(1).split('&');
+//     if (queryString.includes('optoutAction=optout')) {
+//       const ccpaOptout=document.getElementById("ckyCCPAOptOut");
+//       ccpaOptout.checked=true;
+//       ccpaOptout.style.backgroundColor='#1863dc';
+//       performBannerAction();
+//     }
+//   });
+// });
+// function waitForElement(selector, callback) {
+//   const element = document.querySelector(selector);
+//   if (element) return callback();
+//   checktimeout++;
+//   if (checktimeout < 120) {
+//     setTimeout(function () {
+//       waitForElement(selector, callback);
+//     }, 500);
+//   }
+// }
 
 // var checktimeout = 0;
 // window.addEventListener("load", function () {
