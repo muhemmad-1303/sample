@@ -68,3 +68,31 @@
 //     }, 500);
 //   }
 // }
+
+var checktimeout = 0;
+window.addEventListener("load", function () {
+  waitForElement(".cky-consent-container", function () {
+    var doNotSellButton = document.querySelector(".cky-btn .cky-btn-do-not-sell");
+    if(doNotSellButton){
+    var newButton=doNotSellButton.cloneNode(true)
+    doNotSellButton.replaceWith(newButton);
+    newButton.onclick = function () {
+    //   const outerLayer=document.querySelector(".cky-consent-container");
+    //   outerLayer.classList.add('cky-hide')
+         console.log("hello");
+         performBannerAction("reject");
+    };
+  }
+  
+  });
+});
+function waitForElement(selector, callback) {
+  const element = document.querySelector(selector);
+  if (element) return callback();
+  checktimeout++;
+  if (checktimeout < 120) {
+    setTimeout(function () {
+      waitForElement(selector, callback);
+    }, 500);
+  }
+}
