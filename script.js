@@ -73,14 +73,10 @@ var checktimeout = 0;
 window.addEventListener("load", function () {
   waitForElement(".cky-consent-container", function () {
     var doNotSellButton = document.querySelector(".cky-btn-do-not-sell");
-    console.log(doNotSellButton);
     if(doNotSellButton){
     var newButton=doNotSellButton.cloneNode(true)
     doNotSellButton.replaceWith(newButton);
     newButton.onclick = function () {
-    //   const outerLayer=document.querySelector(".cky-consent-container");
-    //   outerLayer.classList.add('cky-hide')
-         console.log("hello");
          performBannerAction("reject");
     };
   }
