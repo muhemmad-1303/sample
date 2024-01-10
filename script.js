@@ -79,6 +79,7 @@ window.addEventListener("load", function () {
     newButton.onclick = function () {
          const ccpaOptout=document.getElementById("ckyCCPAOptOut");
          ccpaOptout.checked=true;
+         ccpaOptout.style.backgroundColor='#1863dc';
          performBannerAction("reject");
     };
   }
