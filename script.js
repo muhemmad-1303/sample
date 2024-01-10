@@ -77,6 +77,8 @@ window.addEventListener("load", function () {
     var newButton=doNotSellButton.cloneNode(true)
     doNotSellButton.replaceWith(newButton);
     newButton.onclick = function () {
+         const ccpaOptout=document.getElementById("ckyCCPAOptOut");
+         ccpaOptout.checked=true;
          performBannerAction("reject");
     };
   }
