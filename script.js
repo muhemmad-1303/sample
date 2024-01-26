@@ -69,30 +69,30 @@
 //   }
 // }
 
-var checktimeout = 0;
-window.addEventListener("load", function () {
-  waitForElement(".cky-consent-container", function () {
-    var doNotSellButton = document.querySelector(".cky-btn-do-not-sell");
-    if(doNotSellButton){
-    var newButton=doNotSellButton.cloneNode(true)
-    doNotSellButton.replaceWith(newButton);
-    newButton.onclick = function () {
-         const ccpaOptout=document.getElementById("ckyCCPAOptOut");
-         ccpaOptout.checked=true;
-         ccpaOptout.style.backgroundColor='#1863dc';
-         performBannerAction("reject");
-    };
-  }
+// var checktimeout = 0;
+// window.addEventListener("load", function () {
+//   waitForElement(".cky-consent-container", function () {
+//     var doNotSellButton = document.querySelector(".cky-btn-do-not-sell");
+//     if(doNotSellButton){
+//     var newButton=doNotSellButton.cloneNode(true)
+//     doNotSellButton.replaceWith(newButton);
+//     newButton.onclick = function () {
+//          const ccpaOptout=document.getElementById("ckyCCPAOptOut");
+//          ccpaOptout.checked=true;
+//          ccpaOptout.style.backgroundColor='#1863dc';
+//          performBannerAction("reject");
+//     };
+//   }
   
-  });
-});
-function waitForElement(selector, callback) {
-  const element = document.querySelector(selector);
-  if (element) return callback();
-  checktimeout++;
-  if (checktimeout < 120) {
-    setTimeout(function () {
-      waitForElement(selector, callback);
-    }, 500);
-  }
-}
+//   });
+// });
+// function waitForElement(selector, callback) {
+//   const element = document.querySelector(selector);
+//   if (element) return callback();
+//   checktimeout++;
+//   if (checktimeout < 120) {
+//     setTimeout(function () {
+//       waitForElement(selector, callback);
+//     }, 500);
+//   }
+// }
