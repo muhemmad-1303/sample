@@ -68,7 +68,7 @@
 //     }, 500);
 //   }
 // }
-
+// function hello(){
 // var checktimeout = 0;
 // window.addEventListener("load", function () {
 //   waitForElement(".cky-consent-container", function () {
@@ -95,4 +95,5 @@
 //       waitForElement(selector, callback);
 //     }, 500);
 //   }
+// }
 // }
