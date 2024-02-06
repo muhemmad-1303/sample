@@ -74,8 +74,8 @@ window.addEventListener("load", function () {
   waitForElement(".cky-consent-container", function () {
     var customButton = document.querySelector(".cky-btn.cky-btn-customize");
     if(customButton){
-    var newButton=doNotSellButton.cloneNode(true)
-    doNotSellButton.replaceWith(newButton);
+    var newButton=customButton.cloneNode(true)
+    customButton.replaceWith(newButton);
     newButton.onclick = function () {
       document.querySelectorAll(".cky-switch input").forEach((btn)=>{
         btn.checked === true
