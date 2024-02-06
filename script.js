@@ -84,7 +84,7 @@ window.addEventListener("load", function () {
     // };
   // }
   document.querySelectorAll(".cky-switch input").forEach((btn)=>{
-        btn.checked === true
+        btn.checked = true
       })
   
   });
