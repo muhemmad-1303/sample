@@ -73,16 +73,19 @@ var checktimeout = 0;
 window.addEventListener("load", function () {
   waitForElement(".cky-consent-container", function () {
     var customButton = document.querySelector(".cky-btn.cky-btn-customize");
-    if(customButton){
-    var newButton=customButton.cloneNode(true)
-    customButton.replaceWith(newButton);
-    newButton.onclick = function () {
-      document.querySelectorAll(".cky-switch input").forEach((btn)=>{
+    // if(customButton){
+    // var newButton=customButton.cloneNode(true)
+    // Button.replaceWith(newButton);
+    // newButton.onclick = function () {
+    //   document.querySelectorAll(".cky-switch input").forEach((btn)=>{
+    //     btn.checked === true
+    //   })
+    //   revisitCkyConsent();
+    // };
+  // }
+  document.querySelectorAll(".cky-switch input").forEach((btn)=>{
         btn.checked === true
       })
-      revisitCkyConsent();
-    };
-  }
   
   });
 });
