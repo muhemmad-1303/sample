@@ -68,32 +68,31 @@
 //     }, 500);
 //   }
 // }
-// function hello(){
-// var checktimeout = 0;
-// window.addEventListener("load", function () {
-//   waitForElement(".cky-consent-container", function () {
-//     var doNotSellButton = document.querySelector(".cky-btn-do-not-sell");
-//     if(doNotSellButton){
-//     var newButton=doNotSellButton.cloneNode(true)
-//     doNotSellButton.replaceWith(newButton);
-//     newButton.onclick = function () {
-//          const ccpaOptout=document.getElementById("ckyCCPAOptOut");
-//          ccpaOptout.checked=true;
-//          ccpaOptout.style.backgroundColor='#1863dc';
-//          performBannerAction("reject");
-//     };
-//   }
+
+var checktimeout = 0;
+window.addEventListener("load", function () {
+  waitForElement(".cky-consent-container", function () {
+    var customButton = document.querySelector(".cky-btn.cky-btn-customize");
+    if(customButton){
+    var newButton=doNotSellButton.cloneNode(true)
+    doNotSellButton.replaceWith(newButton);
+    newButton.onclick = function () {
+      document.querySelectorAll(".cky-switch input").forEach((btn)=>{
+        btn.checked === true
+      })
+      revisitCkyConsent();
+    };
+  }
   
-//   });
-// });
-// function waitForElement(selector, callback) {
-//   const element = document.querySelector(selector);
-//   if (element) return callback();
-//   checktimeout++;
-//   if (checktimeout < 120) {
-//     setTimeout(function () {
-//       waitForElement(selector, callback);
-//     }, 500);
-//   }
-// }
-// }
+  });
+});
+function waitForElement(selector, callback) {
+  const element = document.querySelector(selector);
+  if (element) return callback();
+  checktimeout++;
+  if (checktimeout < 120) {
+    setTimeout(function () {
+      waitForElement(selector, callback);
+    }, 500);
+  }
+}
