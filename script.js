@@ -69,25 +69,25 @@
 //   }
 // }
 
-var checktimeout = 0;
-window.addEventListener("load", function () {
-  waitForElement(".cky-consent-container", function () {
-  if(!getCkyConsent().isUserActionCompleted){
-  document.querySelectorAll(".cky-switch input").forEach((btn)=>{
-        btn.checked = true
-        btn.style.backgroundColor='rgb(255, 167, 0)';
-      })
-    }
-  });
+// var checktimeout = 0;
+// window.addEventListener("load", function () {
+//   waitForElement(".cky-consent-container", function () {
+//   if(!getCkyConsent().isUserActionCompleted){
+//   document.querySelectorAll(".cky-switch input").forEach((btn)=>{
+//         btn.checked = true
+//         btn.style.backgroundColor='rgb(255, 167, 0)';
+//       })
+//     }
+//   });
 
-});
-function waitForElement(selector, callback) {
-  const element = document.querySelector(selector);
-  if (element) return callback();
-  checktimeout++;
-  if (checktimeout < 120) {
-    setTimeout(function () {
-      waitForElement(selector, callback);
-    }, 500);
-  }
-}
+// });
+// function waitForElement(selector, callback) {
+//   const element = document.querySelector(selector);
+//   if (element) return callback();
+//   checktimeout++;
+//   if (checktimeout < 120) {
+//     setTimeout(function () {
+//       waitForElement(selector, callback);
+//     }, 500);
+//   }
+// }
