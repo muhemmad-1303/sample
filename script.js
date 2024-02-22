@@ -91,3 +91,24 @@
 //     }, 500);
 //   }
 // }
+
+
+// var checktimeout = 0;
+// window.addEventListener("load", function () {
+//   waitForElement(".cky-consent-container", function () {
+//     if(window.cookieyes._ckyStore._ruleData._regionCode!=='CA'){
+         
+//     }
+//   });
+
+// });
+// function waitForElement(selector, callback) {
+//   const element = document.querySelector(selector);
+//   if (element) return callback();
+//   checktimeout++;
+//   if (checktimeout < 120) {
+//     setTimeout(function () {
+//       waitForElement(selector, callback);
+//     }, 500);
+//   }
+// }
