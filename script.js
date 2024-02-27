@@ -147,10 +147,10 @@ function waitForElement(selector, callback) {
 
 document.addEventListener("cookieyes_consent_update", function (eventData) {
    if (eventData.detail.accepted.includes("analytics")) {
-     removePlaceholder();
+      removePlaceholder();
     }
-    else{
-        addPlaceholder();
+    else if (!checkPlaceholder()){
+       addPlaceholder();
     }
 });
 
