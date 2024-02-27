@@ -162,7 +162,7 @@ function custumFunction() {
   } else if (consent.categories.functional) {
     removePlaceholder();
   }
-
+ }
 
   function addPlaceholder() {
     const divElement = document.createElement("div");
@@ -205,4 +205,3 @@ function custumFunction() {
   function checkPlaceholder() {
     return document.querySelector(".video-placeholder-youtube");
   }
-}
