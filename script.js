@@ -112,3 +112,15 @@
 //     }, 500);
 //   }
 // }
+
+// const scanResult=require("./result.json");
+// // for(i=0;i<Object.keys(scanResult.cookieData).length;i++){
+// //     const url=Object.keys(scanResult.cookieData)[i];
+// //     if(!scanResult.cookieData[url].scanStatus){
+// //         console.log(url);
+// //     }
+// // }
+// Object.keys(scanResult.cookieData).forEach(url => {
+ 
+//         console.log(scanResult.cookieData[url].scanStatus);
+// });
