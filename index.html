@@ -4,7 +4,6 @@
 <head> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Google Tag Manager -->
- 
  <!-- <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() {
@@ -23,7 +22,15 @@
     gtag("set", "ads_data_redaction", true);
     gtag("set", "url_passthrough", true);
 </script> -->
- 
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+  window._nslDOMReady = function (callback) {
+      if ( document.readyState === "complete" || document.readyState === "interactive" ) {
+          callback();
+      } else {
+          document.addEventListener( "DOMContentLoaded", callback );
+      }
+  };
+  </script>
  
  <script>
  
