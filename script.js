@@ -216,11 +216,11 @@ window.addEventListener("load", function () {
   waitForElement(".cky-consent-container", function () {
     let detailAcceptButton=document.querySelector('[data-cky-tag="detail-accept-button"]');
     if(detailAcceptButton){
-      detailAcceptButton.textContent="Accept"
+      detailAcceptButton.textContent="Accept all cookies"
     }
     let acceptButton=document.querySelector('[data-cky-tag="accept-button"]');
     if(acceptButton){
-      acceptButton.textContent="Accept all cookies"
+      acceptButton.textContent="Accept"
     }
     let doNotSell=document.querySelector('[data-cky-tag="donotsell-button"]');
     if(doNotSell){
