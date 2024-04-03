@@ -226,7 +226,7 @@ window.addEventListener("load", function () {
     if(doNotSell){
       doNotSell.textContent="Opt-out preferences"
     }
-    let optOutOption=document.querySelector('[data-cky-tag="donotsell-button"]');
+    let optOutOption=document.querySelector('[data-cky-tag="optout-option-title"]');
     if(optOutOption){
       optOutOption.textContent="Opt-out"
     }
