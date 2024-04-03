@@ -204,3 +204,69 @@
 //   function checkPlaceholder() {
 //     return document.querySelector(".video-placeholder-youtube");
 //   }
+
+
+
+
+// remove text in accept  button in first layer and second layer banner 
+// also edit in us state law
+
+var checktimeout = 0;
+window.addEventListener("load", function () {
+  waitForElement(".cky-consent-container", function () {
+    let detailAcceptButton=document.querySelector('[data-cky-tag="detail-accept-button"]');
+    if(detailAcceptButton){
+      detailAcceptButton.textContent="Accept"
+    }
+    let acceptButton=document.querySelector('[data-cky-tag="accept-button"]');
+    if(acceptButton){
+      acceptButton.textContent="Accept all cookies"
+    }
+    let doNotSell=document.querySelector('[data-cky-tag="donotsell-button"]');
+    if(doNotSell){
+      doNotSell.textContent="Opt-out preferences"
+    }
+    let optOutOption=document.querySelector('[data-cky-tag="donotsell-button"]');
+    if(optOutOption){
+      optOutOption.textContent="Opt-out"
+    }
+
+
+  });
+
+});
+function waitForElement(selector, callback) {
+  const element = document.querySelector(selector);
+  if (element) return callback();
+  checktimeout++;
+  if (checktimeout < 120) {
+    setTimeout(function () {
+      waitForElement(selector, callback);
+    }, 500);
+  }
+}
+
+
+
+// 
+
+
+// var checktimeout = 0;
+// window.addEventListener("load", function () {
+//   waitForElement(".cky-consent-container", function () {
+//       document.querySelector('.cky-modal').classList.remove("cky-modal-open");
+//       document.querySelector('.cky-overlay').classList.add("cky-hide");
+
+//   });
+
+// });
+// function waitForElement(selector, callback) {
+//   const element = document.querySelector(selector);
+//   if (element) return callback();
+//   checktimeout++;
+//   if (checktimeout < 120) {
+//     setTimeout(function () {
+//       waitForElement(selector, callback);
+//     }, 500);
+//   }
+// }
