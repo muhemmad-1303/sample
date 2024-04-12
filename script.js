@@ -275,10 +275,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const cookiesAccepted = localStorage.getItem('cookiesAccepted');
   if (!cookiesAccepted) {
   // Show the dark overlay if cookies haven't been accepted
-  document.getElementById('darkBackground').style.display = 'block';
+  // document.getElementById('darkBackground').style.display = 'block';
   } else {
   // Cookies have been accepted, hide the overlay
-  document.getElementById('darkBackground').style.display = 'none';
+  // document.getElementById('darkBackground').style.display = 'none';
   }
   });
   
