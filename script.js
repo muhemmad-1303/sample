@@ -284,9 +284,12 @@ document.addEventListener("DOMContentLoaded", function () {
   
   document.addEventListener("cookieyes_consent_update", function (eventData) {
   console.log(eventData);
+
   const data = eventData.detail;
-  if (data.accepted.includes('analytics') || data.accepted.includes('functional') || data.accepted.includes('performance') || data.accepted.includes('advertisement')) {
+  if (data.accepted.includes('analytics') || data.accepted.includes('functional') || data.accepted.includes('performance') || data.accepted.includes('advertisement')||
+  eventData.target.activeElement===document.querySelector('.cky-btn.cky-btn-preferences')) {
   // User has accepted cookies, hide the dark overlay and set flag
+  console.log("hello");
   document.getElementById('darkBackground').style.display = 'none';
   localStorage.setItem('cookiesAccepted', 'true');
   }

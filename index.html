@@ -68,6 +68,18 @@ Start cookieyes banner
 
    <!-- <a href='javascript:void(0)' onclick='revisitCkyConsent()'>Edit preferences</a> -->
   <script src="script.js"></script>
+  <button id="myButton">Click me</button>
+
+<script>
+let button=document.querySelector('myButton');
+document.getElementById('myButton').addEventListener('click', function(event) {
+    console.log('Event details:', event.srcElement);
+    console.log(button);
+    if(event.srcElement===button){
+      console.log("hello");
+    }
+});
+</script>
 </body>
 
 </html>
