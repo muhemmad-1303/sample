@@ -275,10 +275,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const cookiesAccepted = localStorage.getItem('cookiesAccepted');
   if (!cookiesAccepted) {
   // Show the dark overlay if cookies haven't been accepted
-  document.getElementById('darkBackground').style.display = 'block';
+  // document.getElementById('darkBackground').style.display = 'block';
   } else {
   // Cookies have been accepted, hide the overlay
-  document.getElementById('darkBackground').style.display = 'none';
+  // document.getElementById('darkBackground').style.display = 'none';
   }
   });
   
@@ -288,7 +288,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const data = eventData.detail;
   if (data.accepted.includes('analytics') || data.accepted.includes('functional') || data.accepted.includes('performance') || data.accepted.includes('advertisement')) {
   // User has accepted cookies, hide the dark overlay and set flag
-  
+  console.log("hello");
   document.getElementById('darkBackground').style.display = 'none';
   localStorage.setItem('cookiesAccepted', 'true');
   }
