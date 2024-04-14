@@ -294,7 +294,7 @@
 //   }
 //   });
 
-
+var checktimeout = 0;
 window.addEventListener("load", function () {
   waitForElement(".cky-consent-container", function () {
     const btnWrapper = document.querySelector(".cky-notice-btn-wrapper");
