@@ -270,26 +270,65 @@
 //   }
 // }
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Check if the user has previously accepted cookies
-  const cookiesAccepted = localStorage.getItem('cookiesAccepted');
-  if (!cookiesAccepted) {
-  // Show the dark overlay if cookies haven't been accepted
-  // document.getElementById('darkBackground').style.display = 'block';
-  } else {
-  // Cookies have been accepted, hide the overlay
-  // document.getElementById('darkBackground').style.display = 'none';
-  }
-  });
+// document.addEventListener("DOMContentLoaded", function () {
+//   // Check if the user has previously accepted cookies
+//   const cookiesAccepted = localStorage.getItem('cookiesAccepted');
+//   if (!cookiesAccepted) {
+//   // Show the dark overlay if cookies haven't been accepted
+//   // document.getElementById('darkBackground').style.display = 'block';
+//   } else {
+//   // Cookies have been accepted, hide the overlay
+//   // document.getElementById('darkBackground').style.display = 'none';
+//   }
+//   });
   
-  document.addEventListener("cookieyes_consent_update", function (eventData) {
-  console.log(eventData);
+//   document.addEventListener("cookieyes_consent_update", function (eventData) {
+//   console.log(eventData);
 
-  const data = eventData.detail;
-  if (data.accepted.includes('analytics') || data.accepted.includes('functional') || data.accepted.includes('performance') || data.accepted.includes('advertisement')) {
-  // User has accepted cookies, hide the dark overlay and set flag
-  console.log("hello");
-  document.getElementById('darkBackground').style.display = 'none';
-  localStorage.setItem('cookiesAccepted', 'true');
-  }
+//   const data = eventData.detail;
+//   if (data.accepted.includes('analytics') || data.accepted.includes('functional') || data.accepted.includes('performance') || data.accepted.includes('advertisement')) {
+//   // User has accepted cookies, hide the dark overlay and set flag
+//   console.log("hello");
+//   document.getElementById('darkBackground').style.display = 'none';
+//   localStorage.setItem('cookiesAccepted', 'true');
+//   }
+//   });
+
+
+window.addEventListener("load", function () {
+  waitForElement(".cky-consent-container", function () {
+    const btnWrapper = document.querySelector(".cky-notice-btn-wrapper");
+    const acceptAllButton = document.createElement("button");
+
+    if (btnWrapper) {
+      const doNotSellButton = btnWrapper.querySelector(
+        ".cky-btn-do-not-sell"
+      );
+      doNotSellButton.style.padding = "8px 27px";
+      doNotSellButton.style.border = "2px solid #1863dc";
+      doNotSellButton.style.marginRight = "14px";
+    }
+    if (acceptAllButton) {
+      acceptAllButton.innerText = "Accept";
+      acceptAllButton.classList.add("cky-btn", "cky-btn-reject");
+      acceptAllButton.onclick = function () {
+        const closeAction = document.querySelector(
+          ".cky-banner-btn-close"
+        );
+        closeAction.click();
+      };
+    }
+    btnWrapper.appendChild(acceptAllButton);
   });
+});
+
+function waitForElement(selector, callback) {
+  const element = document.querySelector(selector);
+  if (element) return callback();
+  checktimeout++;
+  if (checktimeout < 120) {
+    setTimeout(function () {
+      waitForElement(selector, callback);
+    }, 500);
+  }
+}
