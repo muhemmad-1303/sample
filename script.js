@@ -298,7 +298,6 @@ var checktimeout = 0;
 window.addEventListener("load", function () {
   waitForElement(".cky-consent-container", function () {
     const btnWrapper = document.querySelector(".cky-notice-btn-wrapper");
-    const acceptAllButton = document.createElement("button");
 
     if (btnWrapper) {
       const doNotSellButton = btnWrapper.querySelector(
@@ -307,18 +306,8 @@ window.addEventListener("load", function () {
       doNotSellButton.style.padding = "8px 27px";
       doNotSellButton.style.border = "2px solid #1863dc";
       doNotSellButton.style.marginRight = "14px";
+      doNotSellButton.textContent="Reject All"
     }
-    if (acceptAllButton) {
-      acceptAllButton.innerText = "Accept";
-      acceptAllButton.classList.add("cky-btn", "cky-btn-reject");
-      acceptAllButton.onclick = function () {
-        const closeAction = document.querySelector(
-          ".cky-banner-btn-close"
-        );
-        closeAction.click();
-      };
-    }
-    btnWrapper.appendChild(acceptAllButton);
   });
 });
 
