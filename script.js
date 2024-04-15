@@ -294,34 +294,34 @@
 //   }
 //   });
 
-var checktimeout = 0;
-window.addEventListener("load", function () {
-  waitForElement(".cky-consent-container", function () {
-    const doNotSellButton = document.querySelector(
-      ".cky-btn-do-not-sell"
-    );
-    if (doNotSellButton) {
-      var newButton=doNotSellButton.cloneNode(true)
-      doNotSellButton.replaceWith(newButton);
-      doNotSellButton.style.padding = "8px 27px";
-      doNotSellButton.style.border = "2px solid #1863dc";
-      doNotSellButton.style.marginRight = "14px";
-      doNotSellButton.textContent="Reject All"
-      newButton.onclick = function () {
-            performBannerAction("reject");
-      };
-    }
-  });
-});
+// var checktimeout = 0;
+// window.addEventListener("load", function () {
+//   waitForElement(".cky-consent-container", function () {
+//     const doNotSellButton = document.querySelector(
+//       ".cky-btn-do-not-sell"
+//     );
+//     if (doNotSellButton) {
+//       var newButton=doNotSellButton.cloneNode(true)
+//       doNotSellButton.replaceWith(newButton);
+//       doNotSellButton.style.padding = "8px 27px";
+//       doNotSellButton.style.border = "2px solid #1863dc";
+//       doNotSellButton.style.marginRight = "14px";
+//       doNotSellButton.textContent="Reject All"
+//       newButton.onclick = function () {
+//             performBannerAction("reject");
+//       };
+//     }
+//   });
+// });
 
-function waitForElement(selector, callback) {
-  const element = document.querySelector(selector);
-  if (element) return callback();
-  checktimeout++;
-  if (checktimeout < 120) {
-    setTimeout(function () {
-      waitForElement(selector, callback);
-    }, 500);
-  }
-}
+// function waitForElement(selector, callback) {
+//   const element = document.querySelector(selector);
+//   if (element) return callback();
+//   checktimeout++;
+//   if (checktimeout < 120) {
+//     setTimeout(function () {
+//       waitForElement(selector, callback);
+//     }, 500);
+//   }
+// }
 
