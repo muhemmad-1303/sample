@@ -297,16 +297,19 @@
 var checktimeout = 0;
 window.addEventListener("load", function () {
   waitForElement(".cky-consent-container", function () {
-    const btnWrapper = document.querySelector(".cky-notice-btn-wrapper");
-
-    if (btnWrapper) {
-      const doNotSellButton = btnWrapper.querySelector(
-        ".cky-btn-do-not-sell"
-      );
+    const doNotSellButton = document.querySelector(
+      ".cky-btn-do-not-sell"
+    );
+    if (doNotSellButton) {
+      var newButton=doNotSellButton.cloneNode(true)
+      doNotSellButton.replaceWith(newButton);
       doNotSellButton.style.padding = "8px 27px";
       doNotSellButton.style.border = "2px solid #1863dc";
       doNotSellButton.style.marginRight = "14px";
       doNotSellButton.textContent="Reject All"
+      newButton.onclick = function () {
+            performBannerAction("reject");
+      };
     }
   });
 });
@@ -321,3 +324,4 @@ function waitForElement(selector, callback) {
     }, 500);
   }
 }
+
