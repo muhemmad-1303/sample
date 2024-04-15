@@ -306,7 +306,7 @@ window.addEventListener("load", function () {
       newButton.style.padding = "8px 27px";
       newButton.style.border = "2px solid #1863dc";
       newButton.textContent="Reject All"
-      newButton.style.width="50%"
+      newButton.style.flex="flex: 0 0 auto";
       newButton.onclick = function () {
             performBannerAction("reject");
       };
