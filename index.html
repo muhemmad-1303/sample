@@ -59,7 +59,24 @@ Start cookieyes banner
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   
   <!-- End Google Tag Manager (noscript) -->
-  
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag("consent", "default", {
+        ad_storage: "denied",
+        ad_user_data: "denied", 
+        ad_personalization: "denied",
+        analytics_storage: "denied",
+        functionality_storage: "denied",
+        personalization_storage: "denied",
+        security_storage: "granted",
+        wait_for_update: 2000,
+    });
+    gtag("set", "ads_data_redaction", true);
+    gtag("set", "url_passthrough", true);
+</script>
   <h1>hello</h1>
   <a href="cookie.html">cookiepolicy</a>
   <br>
