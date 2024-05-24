@@ -327,6 +327,7 @@
 
 
 if(! window.innerWidth <= 768){
+    console.log(window.innerWidth);
     var script = document.createElement('script');
     script.src = "hello";
     script.type = 'text/javascript';
