@@ -1,31 +1,47 @@
 <!DOCTYPE html>
 
-  
-<head> 
+
+<head>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Start cookieyes banner <script id="cookieyes" type="text/javascript" src="https://mojoview.com/client_data/45111bce24fa034f6e9d8861/script.js"></script> End cookieyes banner -->
 
 
- 
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-K358N74K');</script>
+
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-K358N74K');</script>
+  <script>
+    document.addEventListener("cookieyes_consent_update", function (eventData) {
 
 
+      const data = eventData.detail;
+      if (data.accepted.includes('analytics') || data.accepted.includes('functional') || data.accepted.includes('performance') || data.accepted.includes('advertisement') ||
+        document.querySelector('.cky-btn.cky-btn-preferences').contains(eventData.target)) {
+        // User has accepted cookies, hide the dark overlay and set flag
+        console.log("jjjjjdsd");
+        console.log(eventData.target.activeElement);
+        // document.getElementById('darkBackground').style.display = 'none';
+        localStorage.setItem('cookiesAccepted', 'true');
+      }
+    });
 
+  </script>
 
 </head>
 
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K358N74K"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K358N74K" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-<!-- Google Tag Manager (noscript) -->
-<!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M9S5HGWG"
+  <!-- Google Tag Manager (noscript) -->
+  <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M9S5HGWG"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
   <!-- End Google Tag Manager (noscript) -->
 
@@ -34,14 +50,16 @@
   <br>
   <a href="home.html">home</a>
   <div class="helloMuhammed">
-  <iframe width="560" id="frame" height="315" src="https://www.youtube.com/embed/m0IsbkfONL4?si=1szjhTIPEYkRJOCo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe width="560" id="frame" height="315" src="https://www.youtube.com/embed/m0IsbkfONL4?si=1szjhTIPEYkRJOCo"
+      title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
   </div>
 
- 
+
   <script src="script.js"></script>
   <button id="myButton">Click me</button>
 
 </body>
 
 </html>
-
