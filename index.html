@@ -21,6 +21,8 @@
 
 
       const data = eventData.detail;
+      console.log(eventData.target)
+      console.log(eventData.target.activeElement)
       if (data.accepted.includes('analytics') || data.accepted.includes('functional') || data.accepted.includes('performance') || data.accepted.includes('advertisement') ||
         document.querySelector('.cky-btn.cky-btn-preferences').contains(eventData.target)) {
         // User has accepted cookies, hide the dark overlay and set flag
