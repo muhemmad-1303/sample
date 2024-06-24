@@ -1,4 +1,55 @@
-// var checktimeout = 0;
+
+
+// console.log(a)
+// var a=5;
+// function greeting() {
+//   var b = "hello";
+//   console.log(b);
+// }
+// greeting();
+// console.log(a)
+
+
+
+
+document.cookie = "username=john_doe; expires=Thu, 01 Jan 2025 00:00:00 UTC";
+document.cookie = "username=john_doe; expires=Thu, 01 Jan 2025 00:00:00 UTC";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // window.addEventListener("load", function () {
 //   waitForElement(".cky-consent-container", function () {
 //     document.querySelector('.cky-btn-close img').alt="muhammed";
