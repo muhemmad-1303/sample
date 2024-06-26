@@ -32,11 +32,12 @@ function waitForElement(selector, callback) {
 function handleConsentBannerShown(element) {
   document.body.style.overflow = "hidden";
   for (let i = 0; i < buttons.length; i++) {
-    const buttonElement = document.querySelector(buttons[i]);
-    buttonElement &&
-      buttonElement.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-        document.body.style.overflow = "auto";
+    const buttonElements = document.querySelectorAll(buttons[i]);
+    buttonElements &&
+      buttonElements.forEach((element) => {
+        element.addEventListener("click", () => {
+          document.body.style.overflow = "auto";
+        });
       });
   }
 }
