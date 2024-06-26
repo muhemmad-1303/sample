@@ -12,13 +12,48 @@
 
 
 
-document.cookie = "username=john_doe; expires=Thu, 01 Jan 2025 00:00:00 UTC";
-document.cookie = "username=john_doe; expires=Thu, 01 Jan 2025 00:00:00 UTC";
+// document.cookie = "username=john_doe; expires=Thu, 01 Jan 2025 00:00:00 UTC";
+// document.cookie = "username=john_doe; expires=Thu, 01 Jan 2025 00:00:00 UTC";
 
 
 
 
+const buttons = [".cky-btn-accept", ".cky-btn-reject", ".cky-btn-preferences"];
 
+window.addEventListener("load", function () {
+  waitForElement(".cky-consent-container", handleConsentBannerShown);
+});
+
+function waitForElement(selector, callback) {
+  const element = document.querySelector(selector);
+  if (element) {
+    const display = getDisplayStyle(element);
+    if (display !== "none" && display !== "") {
+      return callback(element);
+    }
+  }
+  setTimeout(() => {
+    waitForElement(selector, callback);
+  }, 200);
+}
+
+function handleConsentBannerShown(element) {
+  document.body.style.overflow = "hidden";
+  for (let i = 0; i < buttons.length; i++) {
+    const buttonElement = document.querySelector(buttons[i]);
+    buttonElement &&
+      buttonElement.addEventListener("click", () => {
+        document.body.style.overflow = "auto";
+      });
+  }
+}
+function getDisplayStyle(element) {
+  return element.currentStyle
+    ? element.currentStyle["display"]
+    : window.getComputedStyle
+    ? window.getComputedStyle(element, null).getPropertyValue("display")
+    : "";
+}
 
 
 
