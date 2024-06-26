@@ -1,5 +1,3 @@
-
-
 // console.log(a)
 // var a=5;
 // function greeting() {
@@ -9,14 +7,8 @@
 // greeting();
 // console.log(a)
 
-
-
-
 // document.cookie = "username=john_doe; expires=Thu, 01 Jan 2025 00:00:00 UTC";
 // document.cookie = "username=john_doe; expires=Thu, 01 Jan 2025 00:00:00 UTC";
-
-
-
 
 const buttons = [".cky-btn-accept", ".cky-btn-reject", ".cky-btn-preferences"];
 
@@ -43,6 +35,7 @@ function handleConsentBannerShown(element) {
     const buttonElement = document.querySelector(buttons[i]);
     buttonElement &&
       buttonElement.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
         document.body.style.overflow = "auto";
       });
   }
@@ -55,40 +48,10 @@ function getDisplayStyle(element) {
     : "";
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // window.addEventListener("load", function () {
 //   waitForElement(".cky-consent-container", function () {
 //     document.querySelector('.cky-btn-close img').alt="muhammed";
-   
+
 //   });
 // });
 // function waitForElement(selector, callback) {
@@ -173,12 +136,11 @@ function getDisplayStyle(element) {
 //   }
 // }
 
-
 // var checktimeout = 0;
 // window.addEventListener("load", function () {
 //   waitForElement(".cky-consent-container", function () {
 //     if(window.cookieyes._ckyStore._ruleData._regionCode!=='CA'){
-         
+
 //     }
 //   });
 
@@ -202,11 +164,9 @@ function getDisplayStyle(element) {
 // //     }
 // // }
 // Object.keys(scanResult.cookieData).forEach(url => {
- 
+
 //         console.log(scanResult.cookieData[url].scanStatus);
 // });
-
-
 
 // var checktimeout = 0;
 
@@ -215,7 +175,6 @@ function getDisplayStyle(element) {
 //     custumFunction();
 //   });
 // });
-
 
 // function waitForElement(selector, callback) {
 //   const element = document.querySelector(selector);
@@ -236,7 +195,6 @@ function getDisplayStyle(element) {
 //        addPlaceholder();
 //     }
 // });
-
 
 // function custumFunction() {
 //   const consent = getCkyConsent();
@@ -291,10 +249,7 @@ function getDisplayStyle(element) {
 //     return document.querySelector(".video-placeholder-youtube");
 //   }
 
-
-
-
-// remove text in accept  button in first layer and second layer banner 
+// remove text in accept  button in first layer and second layer banner
 // also edit in us state law
 
 // var checktimeout = 0;
@@ -317,7 +272,6 @@ function getDisplayStyle(element) {
 //       optOutOption.textContent="Opt-out"
 //     }
 
-
 //   });
 
 // });
@@ -332,9 +286,7 @@ function getDisplayStyle(element) {
 //   }
 // }
 
-
-// 
-
+//
 
 // var checktimeout = 0;
 // window.addEventListener("load", function () {
@@ -367,7 +319,7 @@ function getDisplayStyle(element) {
 //   // document.getElementById('darkBackground').style.display = 'none';
 //   }
 //   });
-  
+
 //   document.addEventListener("cookieyes_consent_update", function (eventData) {
 //   console.log(eventData);
 
@@ -410,5 +362,3 @@ function getDisplayStyle(element) {
 //     }, 500);
 //   }
 // }
-
-
