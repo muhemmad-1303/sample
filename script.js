@@ -9,7 +9,8 @@
 
 // document.cookie = "username=john_doe; expires=Thu, 01 Jan 2025 00:00:00 UTC";
 // document.cookie = "username=john_doe; expires=Thu, 01 Jan 2025 00:00:00 UTC";
-
+{
+  /* <script>
 const buttons = [".cky-btn-accept", ".cky-btn-reject", ".cky-btn-preferences"];
 
 window.addEventListener("load", function () {
@@ -48,6 +49,85 @@ function getDisplayStyle(element) {
     ? window.getComputedStyle(element, null).getPropertyValue("display")
     : "";
 }
+</script> */
+}
+
+// var keys = { 37: 1, 38: 1, 39: 1, 40: 1 };
+
+// function preventDefault(e) {
+//   e.preventDefault();
+// }
+
+// function preventDefaultForScrollKeys(e) {
+//   if (keys[e.keyCode]) {
+//     preventDefault(e);
+//     return false;
+//   }
+// }
+
+// // modern Chrome requires { passive: false } when adding event
+// var supportsPassive = false;
+// try {
+//   window.addEventListener(
+//     "test",
+//     null,
+//     Object.defineProperty({}, "passive", {
+//       get: function () {
+//         supportsPassive = true;
+//       },
+//     })
+//   );
+// } catch (e) {}
+
+// var wheelOpt = supportsPassive ? { passive: false } : false;
+// var wheelEvent =
+//   "onwheel" in document.createElement("div") ? "wheel" : "mousewheel";
+
+// // call this to Disable
+// function disableScroll() {
+//   window.addEventListener("DOMMouseScroll", preventDefault, false); // older FF
+//   window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
+//   window.addEventListener("touchmove", preventDefault, wheelOpt); // mobile
+//   window.addEventListener("keydown", preventDefaultForScrollKeys, false);
+// }
+
+// // call this to Enable
+// function enableScroll() {
+//   window.removeEventListener("DOMMouseScroll", preventDefault, false);
+//   window.removeEventListener(wheelEvent, preventDefault, wheelOpt);
+//   window.removeEventListener("touchmove", preventDefault, wheelOpt);
+//   window.removeEventListener("keydown", preventDefaultForScrollKeys, false);
+// }
+
+// document.addEventListener("cookieyes_banner_load", function (eventData) {
+//   const buttons = [
+//     ".cky-btn-accept",
+//     ".cky-btn-reject",
+//     ".cky-banner-btn-close",
+//   ];
+//   let isBanner = document.querySelector(".cky-consent-container");
+//   if (isBanner && !eventData.detail.isUserActionCompleted) {
+//     disableScroll();
+//   }
+//   let preferenceCenter = document.querySelector("cky-preference-center");
+//   if (preferenceCenter) {
+//     preferenceCenter.addEventListener("mouseenter", () => {
+//       enableScroll();
+//     });
+//     preferenceCenter.addEventListener("mouseleave", () => {
+//       disableScroll();
+//     });
+//     for (let i = 0; i < buttons.length; i++) {
+//       const buttonElements = document.querySelectorAll(buttons[i]);
+//       buttonElements &&
+//         buttonElements.forEach((element) => {
+//           element.addEventListener("click", () => {
+//             enableScroll();
+//           });
+//         });
+//     }
+//   }
+// });
 
 // window.addEventListener("load", function () {
 //   waitForElement(".cky-consent-container", function () {
