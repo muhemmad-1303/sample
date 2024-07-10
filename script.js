@@ -9,7 +9,7 @@
 
 // document.cookie = "username=john_doe; expires=Thu, 01 Jan 2025 00:00:00 UTC";
 // document.cookie = "username=john_doe; expires=Thu, 01 Jan 2025 00:00:00 UTC";
-{
+// {
   /* <script>
 const buttons = [".cky-btn-accept", ".cky-btn-reject", ".cky-btn-preferences"];
 
@@ -50,7 +50,7 @@ function getDisplayStyle(element) {
     : "";
 }
 </script> */
-}
+// }
 
 // var keys = { 37: 1, 38: 1, 39: 1, 40: 1 };
 
