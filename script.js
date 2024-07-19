@@ -10,7 +10,7 @@
 // document.cookie = "username=john_doe; expires=Thu, 01 Jan 2025 00:00:00 UTC";
 // document.cookie = "username=john_doe; expires=Thu, 01 Jan 2025 00:00:00 UTC";
 // {
-  /* <script>
+/* <script>
 const buttons = [".cky-btn-accept", ".cky-btn-reject", ".cky-btn-preferences"];
 
 window.addEventListener("load", function () {
