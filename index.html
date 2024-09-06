@@ -7,10 +7,7 @@
   <title>Document</title>
   <script>
     document.addEventListener("cookieyes_banner_load", (eventData) => {
-      const data = eventData.detail;
-      console.log(eventData.detail);
-      if (data.activeLaw !== "ccpa" || (!cookieyes._ckyStore._bannerConfig.respectGPC && !navigator.globalPrivacyControl)) return;
-
+      if(cookieyes._ckyStore._bannerConfig.respectGPC && !!navigator.globalPrivacyControl){
       const closeButton = document.querySelector(".cky-banner-btn-close")
       const DNSbutton = document.querySelector(".cky-btn-do-not-sell");
       const btnWrapper = document.querySelector(".cky-notice-btn-wrapper");
@@ -26,6 +23,7 @@
       newCloseButton.style.border = "2px solid #1863dc";
       newCloseButton.addEventListener("click", () => closeButton.click());
       parentElement.replaceChild(newCloseButton, DNSbutton);
+      }
     });
   </script>
   <!-- Start cookieyes banner -->
