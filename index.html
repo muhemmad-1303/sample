@@ -5,10 +5,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <!-- Start cookieyes banner --> <script id="cookieyes" type="text/javascript" src="https://mojoview.com/client_data/b6d8be486a90361a4dae4fd4/script.js"></script> <!-- End cookieyes banner -->
+  <script>
+    document.addEventListener("cookieyes_banner_load", (eventData) => {
+      const data = eventData.detail;
+      console.log(eventData.detail);
+      if (data.activeLaw !== "ccpa" || (!cookieyes._ckyStore._bannerConfig.respectGPC && !navigator.globalPrivacyControl)) return;
+
+      const closeButton = document.querySelector(".cky-banner-btn-close")
+      const DNSbutton = document.querySelector(".cky-btn-do-not-sell");
+      const btnWrapper = document.querySelector(".cky-notice-btn-wrapper");
+      const parentElement = DNSbutton.parentNode;
+      const newCloseButton = document.createElement("button");
+      btnWrapper.style.width = '50%';
+      btnWrapper.style.margin = '10px 0px 0px auto';
+      newCloseButton.setAttribute("class", "cky-btn cky-btn-do-not-sell");
+      newCloseButton.setAttribute("aria-label", "Close");
+      newCloseButton.innerHTML = "Close";
+      newCloseButton.style.padding = "8px 27px";
+      newCloseButton.style.textAlign = "center";
+      newCloseButton.style.border = "2px solid #1863dc";
+      newCloseButton.addEventListener("click", () => closeButton.click());
+      parentElement.replaceChild(newCloseButton, DNSbutton);
+    });
+  </script>
   <!-- Start cookieyes banner -->
-<!-- Google Tag Manager -->
-<!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  <script id="cookieyes" type="text/javascript"
+    src="https://mojoview.com/client_data/b6d8be486a90361a4dae4fd4/script.js"></script> <!-- End cookieyes banner -->
+  <!-- Start cookieyes banner -->
+  <!-- Google Tag Manager -->
+  <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
